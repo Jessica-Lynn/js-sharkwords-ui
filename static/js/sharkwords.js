@@ -19,6 +19,16 @@ let numWrong = 0;
 //
 const createDivsForChars = (word) => {
   // Replace this with your code
+
+  // :emphasize-lines: 2
+
+  const letter = 'z';
+  const container = document.querySelector('#word-container')
+  for (const letter in word){
+    // console.log(letter);
+    container
+      .insertAdjacentHTML('beforeend', `<div class="letter-box ${letter}"></div>`);
+  }
 };
 
 // Loop over each letter in the alphabet and generate a button
@@ -55,7 +65,7 @@ const isLetterInWord = (letter) => {
   const word = 'hello';
 
   // call the function that makes an empty line for each letter in the word
-  // Replace this line with the function call
+  createDivsForChars(word);
 
   // call the function that makes a button for each letter in the alphabet
   // Replace this line with the function call
@@ -63,4 +73,5 @@ const isLetterInWord = (letter) => {
   // in the next lab, you will be adding functionality to handle when
   // someone clicks on a letter
 
-})();
+})
+();
